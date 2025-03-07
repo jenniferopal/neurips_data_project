@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 files = [
-    'datasets/Case.csv', 'datasets/PatientInfo.csv', 'datasets/Policy.csv', 'datasets/Region.csv', 'datasets/SearchTrend.csv', 'datasets/SeoulFloating.csv', 'datasets/Time.csv', 'datasets/TimeAge.csv', 'datasets/TimeGender.csv', 'datasets/TimeProvince.csv', 'datasets/Weather.csv'
+    'datasets/raw/Case.csv', 'datasets/raw/PatientInfo.csv', 'datasets/raw/Policy.csv', 'datasets/raw/Region.csv', 'datasets/raw/SearchTrend.csv', 'datasets/raw/SeoulFloating.csv', 'datasets/raw/Time.csv', 'datasets/raw/TimeAge.csv', 'datasets/raw/TimeGender.csv', 'datasets/raw/TimeProvince.csv', 'datasets/raw/Weather.csv'
 ]
 
 # This function is to explore a dataframe

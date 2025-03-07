@@ -13,15 +13,16 @@ print(f"Original shape: {patient_data.shape}")
 
 # Drop the columns with more than 50% missing values
 columns_to_drop = ['contact_number', 'symptom_onset_date', 'deceased_date']
-# patient_data.drop = ['contact_number', 'symptom_onset_date', 'deceased_date']
+patient_data.drop = patient_data.drop(columns=columns_to_drop)
 
 # Handling categorical missing values and filling them with 'Unknown'
 patient_data['sex'] = patient_data['sex'].fillna('Unknown')
 patient_data['infection_case'] = patient_data['infection_case'].fillna('Unknown')
 patient_data['city'] = patient_data['city'].fillna('Unknown')
+
 print(patient_data['age'].describe())
 
-# resolving the missing ages with median 
+print(patient_data['age'].unique())
 
 # converting the age column to numberic values. 
 def clean_age(age_value):
@@ -54,8 +55,12 @@ print(f"Median age: {median_age}")
 # Filling the missing ages with the median age
 patient_data['age_int'] = patient_data['age_int'].fillna(median_age)
 
+# Keep the original age column for reference
+patient_data['age_original'] = patient_data['age']
+patient_data['age'] = patient_data['age_int']
+
 # Convert the dates to datetime objects
-date_columns = ['confirmed_date', 'released_date', 'deceased_date']
+date_columns = ['confirmed_date', 'released_date']
 for col in date_columns:
     if col in patient_data.columns:
         # cpverting to datetime and the errors='coerce' will set invalid dates to NaT
